@@ -1,0 +1,705 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api Diliké",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/adresses": {
+            "get": {
+                "tags": [
+                    "adresses"
+                ],
+                "summary": "liste des adresses",
+                "description": "liste de de toutes les adresses",
+                "operationId": "adresses_list",
+                "responses": {
+                    "200": {
+                        "description": "Afficher la liste de de toutes les adresses"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "adresses"
+                ],
+                "summary": "Créer une adresse",
+                "description": "Créer d'une adresse",
+                "operationId": "adresses",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "entreprise": {
+                                        "type": "string"
+                                    },
+                                    "position": {
+                                        "type": "string"
+                                    },
+                                    "ville": {
+                                        "type": "string"
+                                    },
+                                    "quartier": {
+                                        "type": "string"
+                                    },
+                                    "rue": {
+                                        "type": "string"
+                                    },
+                                    "repere": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "entreprise": "ISTM",
+                                    "position": "position 45 p4",
+                                    "ville": "Abidjan",
+                                    "quartier": "Yopougon-Koweit",
+                                    "repere": "Devant la pharmacie"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/adresses/{id}": {
+            "get": {
+                "tags": [
+                    "adresses"
+                ],
+                "summary": "Obtenir une seul adresse",
+                "description": "Obtenir une seul adresse",
+                "operationId": "one_adresse",
+                "responses": {
+                    "200": {
+                        "description": "Obtenir une seul adresse"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "adresses"
+                ],
+                "summary": "Mettre à jour une adresse",
+                "description": "Mise à jour d'une adresse",
+                "operationId": "adresses_update",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "entreprise": {
+                                        "type": "string"
+                                    },
+                                    "position": {
+                                        "type": "string"
+                                    },
+                                    "ville": {
+                                        "type": "string"
+                                    },
+                                    "quartier": {
+                                        "type": "string"
+                                    },
+                                    "repere": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "entreprise": "ISTM",
+                                    "position": "position 45 p4",
+                                    "ville": "Abidjan",
+                                    "quartier": "Yopougon-Koweit",
+                                    "repere": "Devant la pharmacie"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "adresses"
+                ],
+                "summary": "Supprimer une adresse",
+                "description": "Supprimer une adress",
+                "operationId": "delete_adresses",
+                "responses": {
+                    "200": {
+                        "description": "Supprimer une adresse"
+                    }
+                }
+            }
+        },
+        "/api/categories": {
+            "get": {
+                "tags": [
+                    "categories"
+                ],
+                "summary": "liste des categories",
+                "description": "liste de de toutes les categories",
+                "operationId": "categories_list",
+                "responses": {
+                    "200": {
+                        "description": "Afficher la liste de de toutes les categories"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "categories"
+                ],
+                "summary": "Créer une categorie",
+                "description": "Inscription d'une categorie",
+                "operationId": "categories",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nom": "Plat Attié"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/categories/{id}": {
+            "get": {
+                "tags": [
+                    "categories"
+                ],
+                "summary": "Obtenir une seul categories",
+                "description": "Obtenir une seul categories",
+                "operationId": "one_categorie",
+                "responses": {
+                    "200": {
+                        "description": "Obtenir une seul categories"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "categories"
+                ],
+                "summary": "Mise à jour d'une categorie",
+                "description": "Mise à jour d'une categorie",
+                "operationId": "categories_update",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nom": "Plat Attié"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "categories"
+                ],
+                "summary": "Supprimer une categorie",
+                "description": "Suprrime une categorie",
+                "operationId": "delete_categories",
+                "responses": {
+                    "200": {
+                        "description": "Supprime une categorie"
+                    }
+                }
+            }
+        },
+        "/api/menus": {
+            "get": {
+                "tags": [
+                    "menus"
+                ],
+                "summary": "liste des menus",
+                "description": "liste de de tous les menus",
+                "operationId": "menus_list",
+                "responses": {
+                    "200": {
+                        "description": "Afficher la liste de de tous les menus"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "menus"
+                ],
+                "summary": "Créer un menu",
+                "description": "Inscription d'un menu",
+                "operationId": "menus",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "heureDebut": {
+                                        "type": "integer"
+                                    },
+                                    "heureFin": {
+                                        "type": "integer"
+                                    },
+                                    "permanant": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nom": "MenuSuper",
+                                    "heureDebut": 8,
+                                    "heureFin": 15,
+                                    "permanant": "non"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/restaurants": {
+            "get": {
+                "tags": [
+                    "restaurants"
+                ],
+                "summary": "liste des restaurants",
+                "description": "liste de de tous les restaurants",
+                "operationId": "restaurants_list",
+                "responses": {
+                    "200": {
+                        "description": "Afficher la liste de de tous les restaurants"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "restaurants"
+                ],
+                "summary": "Créer un restaurant",
+                "description": "Inscription d'un restaurant",
+                "operationId": "restaurants",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nom": "Les Delices",
+                                    "adresse": "Yopougon-Maroc",
+                                    "email": "delice@gmail.com",
+                                    "phone": "0102030405"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/restaurants/{id}": {
+            "get": {
+                "tags": [
+                    "restaurants"
+                ],
+                "summary": "Obtenir un seul restaurant",
+                "description": "Obetenir un seul restaurant",
+                "operationId": "one_restaurant",
+                "responses": {
+                    "200": {
+                        "description": "Afficher les information d'un seul restaurant"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "restaurants"
+                ],
+                "summary": "Mettre à jour un restaurant",
+                "description": "Mise à jour d'un restaurant",
+                "operationId": "_update_restaurants",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nom": "Les Delices",
+                                    "adresse": "Yopougon-Maroc",
+                                    "email": "delice@gmail.com",
+                                    "phone": "0102030405"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "restaurants"
+                ],
+                "summary": "Supprimer un restaurant",
+                "description": "Suprrime un restaurant",
+                "operationId": "delete_restaurants",
+                "responses": {
+                    "200": {
+                        "description": "Supprime une restaurant"
+                    }
+                }
+            }
+        },
+        "/api/login_user": {
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Connexion",
+                "description": "Connexion et retour des données de l'utilisateur",
+                "operationId": "login_user",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "email": "zouzoua@gmail.com",
+                                    "password": "12345678X"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "liste des utilisateurs",
+                "description": "liste de de tous les utilisateurs",
+                "operationId": "users_list",
+                "responses": {
+                    "200": {
+                        "description": "Afficher la liste de de tous les utilisateurs"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Inscription",
+                "description": "Inscription d'un utilisateur",
+                "operationId": "users",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "prenoms": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nom": "XXXXX",
+                                    "prenoms": "XXXXX",
+                                    "phone": "xxxx",
+                                    "email": "XXXXX@gmail.com",
+                                    "password": "12345678X",
+                                    "password_confirmation": "12345678X"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/users/{id}": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Obtenir un utilisateur",
+                "description": "Information sur un utilisateur",
+                "operationId": "on_user",
+                "responses": {
+                    "200": {
+                        "description": "Information sur un utilisateur"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Mise à jour d'un utilisateur",
+                "description": "Mise à jour d'un utilisateur",
+                "operationId": "users_update",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "prenoms": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nom": "Kouadio",
+                                    "prenoms": "Essis",
+                                    "phone": "56854215",
+                                    "password": "12345678X"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Suprimer un utilisateur",
+                "description": "Suprimer un utilisateur",
+                "operationId": "user_delete",
+                "responses": {
+                    "200": {
+                        "description": "Suprimer un utilisateur"
+                    }
+                }
+            }
+        }
+    }
+}
